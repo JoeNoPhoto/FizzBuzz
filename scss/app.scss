@@ -1,23 +1,27 @@
-@import "settings";
-@import "foundation";
-@import "compass/css3";
+@import 'settings';
+@import 'foundation';
+@import 'compass/css3';
 $fizz-color: #105b63;
 $buzz-color: #ffd34e;
 $fizzbuzz-color: #bd4932;
-$shadow-color: #8aa;
+$shadow-color1: #8aa;
+$shadow-color2: #000;
+
 @function thicken-shadow($depth, $color) {
-  $value: "";
+  $value: '';
   @for $i from 1 through $depth {
     $shadedcolor: darken($color, 20 + $i * 5);
-    $value: $value +'0px #{$i}px 0 #{$shadedcolor}, '
+    $value: $value +'0px #{$i}px 0 #{$shadedcolor}, ';
   }
   $value: $value + '0px 0px 0px hsla(0,0%,0%,0)';
   @return unquote($value)
 }
 
-.fizz, .buzz, .fizzbuzz {
-  color: $shadow-color;
-  text-shadow: thicken-shadow(3, $shadow-color), -4px 4px 6px #000;
+.fizz,
+.buzz,
+.fizzbuzz {
+  color: $shadow-color1;
+  text-shadow: thicken-shadow(3, $shadow-color1), -4px 4px 6px $shadow-color2;
   font-size: 2em;
 }
 

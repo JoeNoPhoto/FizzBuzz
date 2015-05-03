@@ -1,5 +1,7 @@
 // Foundation JavaScript
 // Documentation can be found at: http://foundation.zurb.com/docs
+// $(document).foundation();
+
 function fizzBuzzer(total) {
   var n = 1
   function createTag(parent, child, value, classy) {
@@ -23,4 +25,3 @@ function fizzBuzzer(total) {
   }
 }
 fizzBuzzer(100);
-
