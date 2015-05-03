@@ -1,40 +1,34 @@
 @import "settings";
 @import "foundation";
+@import "compass/css3";
+$fizz-color: #105b63;
+$buzz-color: #ffd34e;
+$fizzbuzz-color: #bd4932;
+$shadow-color: #8aa;
+@function thicken-shadow($depth, $color) {
+  $value: "";
+  @for $i from 1 through $depth {
+    $shadedcolor: darken($color, 20 + $i * 5);
+    $value: $value +'0px #{$i}px 0 #{$shadedcolor}, '
+  }
+  $value: $value + '0px 0px 0px hsla(0,0%,0%,0)';
+  @return unquote($value)
+}
 
-// Or selectively include components
-// @import
-//   "foundation/components/accordion",
-//   "foundation/components/alert-boxes",
-//   "foundation/components/block-grid",
-//   "foundation/components/breadcrumbs",
-//   "foundation/components/button-groups",
-//   "foundation/components/buttons",
-//   "foundation/components/clearing",
-//   "foundation/components/dropdown",
-//   "foundation/components/dropdown-buttons",
-//   "foundation/components/flex-video",
-//   "foundation/components/forms",
-//   "foundation/components/grid",
-//   "foundation/components/inline-lists",
-//   "foundation/components/joyride",
-//   "foundation/components/keystrokes",
-//   "foundation/components/labels",
-//   "foundation/components/magellan",
-//   "foundation/components/orbit",
-//   "foundation/components/pagination",
-//   "foundation/components/panels",
-//   "foundation/components/pricing-tables",
-//   "foundation/components/progress-bars",
-//   "foundation/components/reveal",
-//   "foundation/components/side-nav",
-//   "foundation/components/split-buttons",
-//   "foundation/components/sub-nav",
-//   "foundation/components/switches",
-//   "foundation/components/tables",
-//   "foundation/components/tabs",
-//   "foundation/components/thumbs",
-//   "foundation/components/tooltips",
-//   "foundation/components/top-bar",
-//   "foundation/components/type",
-//   "foundation/components/offcanvas",
-//   "foundation/components/visibility";
+.fizz, .buzz, .fizzbuzz {
+  color: $shadow-color;
+  text-shadow: thicken-shadow(3, $shadow-color), -4px 4px 6px #000;
+  font-size: 2em;
+}
+
+.fizz {
+  color: $fizz-color;
+}
+
+.buzz {
+  color: $buzz-color;
+}
+
+.fizzbuzz {
+  color: $fizzbuzz-color;
+}
