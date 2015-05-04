@@ -1,0 +1,3 @@
+markdown: redcarpet
+baseurl: /FizzBuzz
+exclude: ['README.md']
