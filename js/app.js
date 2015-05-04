@@ -1,12 +1,12 @@
 // Foundation JavaScript
 // Documentation can be found at: http://foundation.zurb.com/docs
-// $(document).foundation();
+$(document).foundation();
 
 function fizzBuzzer(n) {
   function createTag(parent, child, value, classy) {
     var parent = document.querySelector(parent);
     var child = parent.appendChild(document.createElement(child));
-    var value = child.innerHTML = value;
+    var value = child.innerHTML;
     if(typeof classy !== "undefined") {
       var classy = child.classList.add(value);
     }
